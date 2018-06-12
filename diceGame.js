@@ -8,12 +8,14 @@ function diceSideResults(n){
 }
 
 function playerOneAttackTurn(){
-	let n = diceSideResults(20);
+	let n = diceSideResults(12);
 	if (n == 1){
-		console.log("Player one: You do not attack this turn.");
+		document.getElementById("playerOneAttack").innerHTML = "Player one: You do not attack this turn.";
+		
 	}
 	else {
-		console.log("Player one: Your attack attempts for " + n + " damage.")
+		
+		document.getElementById("playerOneAttack").innerHTML = "Player one: Your sword attempts for " + n + " damage.";
 	}
 
 }
@@ -21,13 +23,16 @@ function playerOneAttackTurn(){
 function playerOneDefendTurn(){
 	let n = diceSideResults(6);
 	if (n == 1){
-		console.log("Player one: If your opponent attempted to attack this turn and you were unable to dodge, you take a critical hit for double damage.");
+		document.getElementById("playerOneDefend").innerHTML = "Player one: If your opponent attempted to attack this turn and you were unable to dodge, you take a critical hit for double damage.";
+		
 	}
-	else if (n >= 5){
-		console.log("Player one: Your defense attempts to block " + (n * 2) + " damage.")
+	else if (n <= 5 && n > 1){
+		document.getElementById("playerOneDefend").innerHTML = "Player one: Your armor attempts to block " + (n * 2) + " damage.";
+		
 	}
 	else {
-		console.log("Player one: You do not attempt to block.")
+		document.getElementById("playerOneDefend").innerHTML = "Player one: You do not attempt to block.";
+		
 	}
 
 }
@@ -35,10 +40,12 @@ function playerOneDefendTurn(){
 function playerOneDodgeTurn(){
 	let n = diceSideResults(2);
 	if (n == 1){
-		console.log("Player one: You dodge your opponent's attack and take no damage this turn.");
+		document.getElementById("playerOneDodge").innerHTML = "Player one: You dodge your opponent's attack and take no damage this turn.";
+		
 	}
 	else {
-		console.log("Player one: You are unable to dodge and take a direct hit.")
+		document.getElementById("playerOneDodge").innerHTML = "Player one: You are unable to dodge and take a direct hit.";
+		
 	}
 
 }
@@ -46,21 +53,27 @@ function playerOneDodgeTurn(){
 function playerOneRegenerateHealth(){
 	let n = diceSideResults(4);
 	if (n >= 3) {
-		console.log("Player one: You gain " + (n-2) + " health this turn!");
+		document.getElementById("playerOneRegenerate").innerHTML = "Player one: You gain " + (n-2) + " health this turn!";
+		
 	}
 	else {
-		console.log("Player one: You gain no health this turn.")
+		document.getElementById("playerOneRegenerate").innerHTML = "Player one: You gain no health this turn.";
+		
 	}
 
 }
 
 function playerOneAttemptToDisengage(){
-	let n = diceSideResults(12);
-	if (n == 6){
-		console.log("Player one: You have successfully disengaged and ran from the fight. You lose, but you'll live to fight another day.")
+	let n = diceSideResults(50);
+	if (n == 3){
+		document.getElementById("playerOneDisengage").innerHTML = "true";
+		alert("Player one: You have successfully disengaged and ran from the fight. You lose, but you'll live to fight another day.");
+		return true;
 	}
 	else {
-		console.log("Player one: Your attempt to flee from battle has failed. Return to the fight, you imbecile.")
+		document.getElementById("playerOneDisengage").innerHTML = "Player one: Your attempt to flee from battle has failed. Return to the fight, you imbecile.";
+		
+		return false;
 	}
 
 }
@@ -68,26 +81,31 @@ function playerOneAttemptToDisengage(){
 function playerOneWeaponModifier(){
 	let n = diceSideResults(10);
 	if (n <= 2){
-		console.log("Player one: Your weapon has malfunctioned. Your damage dealt is reduced by 2.")
+		document.getElementById("playerOneWeapon").innerHTML = "Player one: Your weapon has malfunctioned. Your damage dealt is reduced by 2.";
+		
 	}
 
 	else if (n >= 9){
-		console.log("Player one: Your weapon is very effective! Add 2 to your damage dealt.")
+		document.getElementById("playerOneWeapon").innerHTML = "Player one: Your weapon is very effective! Add 2 to your damage dealt.";
+		
 	}
 
 	else {
-		console.log("Player one: Your trusty weapon has performed as expected.")
+		document.getElementById("playerOneWeapon").innerHTML = "Player one: Your trusty weapon has performed as expected.";
+		// console.log("Player one: Your trusty weapon has performed as expected.")
 	}
 
 }
 
 function playerTwoAttackTurn(){
-	let n = diceSideResults(20);
+	let n = diceSideResults(12);
 	if (n == 1){
-		console.log("Player two: You do not attack this turn.");
+		document.getElementById("playerTwoAttack").innerHTML = "Player two: You do not attack this turn.";
+		// console.log("Player two: You do not attack this turn.");
 	}
 	else {
-		console.log("Player two: Your attack attempts for " + n + " damage.")
+		document.getElementById("playerTwoAttack").innerHTML = "Player two: Your sword attempts for " + n + " damage.";
+		// console.log("Player two: Your attack attempts for " + n + " damage.")
 	}
 
 }
@@ -95,13 +113,16 @@ function playerTwoAttackTurn(){
 function playerTwoDefendTurn(){
 	let n = diceSideResults(6);
 	if (n == 1){
-		console.log("Player two: If your opponent attempted to attack this turn and you were unable to dodge, you take a critical hit for double damage.");
+		document.getElementById("playerTwoDefend").innerHTML = "Player two: If your opponent attempted to attack this turn and you were unable to dodge, you take a critical hit for double damage.";
+		// console.log("Player two: If your opponent attempted to attack this turn and you were unable to dodge, you take a critical hit for double damage.");
 	}
-	else if (n >= 5){
-		console.log("Player two: Your defense attempts to block " + (n * 2) + " damage.")
+	else if (n <= 5 && n > 1){
+		document.getElementById("playerTwoDefend").innerHTML = "Player two: Your armor attempts to block " + (n * 2) + " damage.";
+		// console.log("Player two: Your defense attempts to block " + (n * 2) + " damage.")
 	}
 	else {
-		console.log("Player two: You do not attempt to block.")
+		document.getElementById("playerTwoDefend").innerHTML = "Player two: You do not attempt to block.";
+		// console.log("Player two: You do not attempt to block.")
 	}
 
 }
@@ -109,10 +130,12 @@ function playerTwoDefendTurn(){
 function playerTwoDodgeTurn(){
 	let n = diceSideResults(2);
 	if (n == 1){
-		console.log("Player two: You dodge your opponent's attack and take no damage this turn.");
+		document.getElementById("playerTwoDodge").innerHTML = "Player two: You dodge your opponent's attack and take no damage this turn.";
+		// console.log("Player two: You dodge your opponent's attack and take no damage this turn.");
 	}
 	else {
-		console.log("Player two: You are unable to dodge and take a direct hit.")
+		document.getElementById("playerTwoDodge").innerHTML = "Player two: You are unable to dodge and take a direct hit.";
+		// console.log("Player two: You are unable to dodge and take a direct hit.")
 	}
 
 }
@@ -120,40 +143,69 @@ function playerTwoDodgeTurn(){
 function playerTwoRegenerateHealth(){
 	let n = diceSideResults(4);
 	if (n >= 3) {
-		console.log("Player two: You gain " + (n-2) + " health this turn!");
+		document.getElementById("playerTwoRegenerate").innerHTML = "Player two: You gain " + (n-2) + " health this turn!";
+		// console.log("Player two: You gain " + (n-2) + " health this turn!");
 	}
 	else {
-		console.log("Player two: You gain no health this turn.")
+		document.getElementById("playerTwoRegenerate").innerHTML = "Player two: You gain no health this turn.";
+		// console.log("Player two: You gain no health this turn.")
 	}
 
 }
 
 function playerTwoAttemptToDisengage(){
-	let n = diceSideResults(12);
-	if (n == 6){
-		console.log("Player two: You have successfully disengaged and ran from the fight. You lose, but you'll live to fight another day.")
+	let n = diceSideResults(50);
+	if (n == 3){document.getElementById("playerTwoDisengage").innerHTML = "true";
+		alert("Player two: You have successfully disengaged and ran from the fight. You lose, but you'll live to fight another day.")
+		return true;
 	}
 	else {
-		console.log("Player two: Your attempt to flee from battle has failed. Return to the fight, you imbecile.")
+		{document.getElementById("playerTwoDisengage").innerHTML = "Player two: Your attempt to flee from battle has failed. Return to the fight, you imbecile.";
+		// console.log("Player two: Your attempt to flee from battle has failed. Return to the fight, you imbecile.")
+		return false;
 	}
-
 }
+}
+
+
 
 function playerTwoWeaponModifier(){
 	let n = diceSideResults(10);
 	if (n <= 2){
-		console.log("Player two: Your weapon has malfunctioned. Your damage dealt is reduced by 2.")
-	}
+		document.getElementById("playerTwoWeapon").innerHTML = "Player two: Your weapon has malfunctioned. Your damage dealt is reduced by 2.";
+		// console.log("Player two: Your weapon has malfunctioned. Your damage dealt is reduced by 2.")
+		}
+		
 
 	else if (n >= 9){
-		console.log("Player two: Your weapon is very effective! Add 2 to your damage dealt.")
-	}
+		document.getElementById("playerTwoWeapon").innerHTML = "Player two: Your weapon is very effective! Add 2 to your damage dealt.";
+		
+		}
+	
 
 	else {
-		console.log("Player two: Your trusty weapon has performed as expected.")
+		{document.getElementById("playerTwoWeapon").innerHTML = "Player two: Your trusty weapon has performed as expected.";
+		// console.log("Player two: Your trusty weapon has performed as expected.")
+		}
 	}
-
 }
+
+
+// function endGameForDisengagePlayerTwo(){
+// 	let trueChecker = playerTwoAttemptToDisengage();
+// 	if (trueChecker == true){
+		
+// 	alert("Game ends. Player Two has disengaged. Player Two is disqualified for cowardly actions, but lives to fight another day.");
+// 	}
+// }
+
+// function endGameForDisengagePlayerOne(){
+// 	let trueChecker = playerOneAttemptToDisengage();
+// 	if (trueChecker == true){
+		
+// 	alert("Game ends. Player One has disengaged. Player One is disqualified for cowardly actions, but lives to fight another day.");
+// 	}
+// }
 
 // function alertForLifeTotal(){
 // 	alert("Player One Health total: 40.\nPlayer Two health total: 40.")
@@ -168,25 +220,25 @@ function playerTwoWeaponModifier(){
 //   console.log(message);
 // }
 
-function runGame(){
-	// alertForLifeTotal();
-	playerOneAttackTurn();
-	playerTwoAttackTurn();
-	playerOneDefendTurn();
-	playerTwoDefendTurn();
-	playerOneDodgeTurn();
-	playerTwoDodgeTurn();
-	// let playerOneHealth = playerOneStartingHealth();
-	// displayMessage("Your health is " + playerOneHealth);
-	playerOneRegenerateHealth();
-	playerTwoRegenerateHealth();
-	playerOneAttemptToDisengage();
-	playerTwoAttemptToDisengage();
-	playerOneWeaponModifier();
-	playerTwoWeaponModifier();
-}
+// function runGame(){
+// 	// alertForLifeTotal();
+// 	playerOneAttackTurn();
+// 	playerTwoAttackTurn();
+// 	playerOneDefendTurn();
+// 	playerTwoDefendTurn();
+// 	playerOneDodgeTurn();
+// 	playerTwoDodgeTurn();
+// 	// let playerOneHealth = playerOneStartingHealth();
+// 	// displayMessage("Your health is " + playerOneHealth);
+// 	playerOneRegenerateHealth();
+// 	playerTwoRegenerateHealth();
+// 	playerOneWeaponModifier();
+// 	playerTwoWeaponModifier();
+// 	endGameForDisengagePlayerTwo();
+// 	endGameForDisengagePlayerOne();
+// }
 
 
 
 
-runGame();
+//  runGame();

@@ -1,9 +1,49 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title></title>
-</head>
+	<head>
+		<title>-----Battle Royale-----</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
 <body>
+	<center>
+		<h1>"-----Battle Royale-----"</h1>
+		<br><br><br><br>
+	</center>
+
+
+	<center>
 	<script src="diceGame.js"></script>
+		<button onClick = "playerOneAttackTurn()">Player One, Attack</button>
+		<div id="playerOneAttack"></div><br>			
+		<button onClick = "playerOneDefendTurn()">Player One, Defend</button>
+		<div id="playerOneDefend"></div><br>		
+		<button onClick = "playerOneDodgeTurn()">Player One, Dodge</button>
+		<div id="playerOneDodge"></div>	<br>	
+		<button onClick = "playerOneRegenerateHealth()">Player One, Attempt to Regenerate Health</button>
+		<div id="playerOneRegenerate"></div><br>			
+		<button onClick = "playerOneAttemptToDisengage()">Player One, Disengage Attempt</button>
+		<div id="playerOneDisengage"></div>	<br>
+		<button onClick = "playerOneWeaponModifier()">Player One, Weapon Modifier</button>
+		<div id="playerOneWeapon"></div><br>
+		<br><br><br><br>		
+		<button onClick = "playerTwoAttackTurn()">Player Two, Attack</button>
+		<div id="playerTwoAttack"></div><br>
+		<button onClick = "playerTwoDefendTurn()">Player Two, Defend</button>
+		<div id="playerTwoDefend"></div><br>
+		<button onClick = "playerTwoDodgeTurn()">Player Two, Dodge</button>
+		<div id="playerTwoDodge"></div><br>
+		<button onClick = "playerTwoRegenerateHealth()">Player Two, Attempt to Regenerate Health</button>
+		<div id="playerTwoRegenerate"></div><br>
+		<button onClick = "playerTwoAttemptToDisengage()">Player Two, Disengage Attempt</button>
+		<div id="playerTwoDisengage"></div><br>
+		<button onClick = "playerTwoWeaponModifier()">Player Two, Weapon Modifier</button>
+		<div id="playerTwoWeapon"></div><br>
+	</center>
+</div>
+</div>
 </body>
 </html>
+
+
+
