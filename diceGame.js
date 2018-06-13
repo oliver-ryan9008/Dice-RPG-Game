@@ -66,9 +66,9 @@ function playerOneRegenerateHealth(){
 
 function playerOneAttemptToDisengage(){
 	let n = diceSideResults(50);
-	if (n == 3){
-		document.getElementById("playerOneDisengage").innerHTML = "Player one: You have successfully disengaged and ran from the fight. You lose, but you'll live to fight another day.";
-		alert("Player one: You have successfully disengaged and ran from the fight. You lose, but you'll live to fight another day.");
+	if (n <= 3){
+		document.getElementById("playerOneDisengage").innerHTML = "Player one: You have successfully disengaged and ran from the fight. You win, but your mother is a hamster and your father smells of elderberries.";
+		alert("Brave Sir Robin ran away. Bravely ran away away. When danger reared it's ugly head, he bravely turned his tail and fled. Yes, brave Sir Robin turned about and gallantly he chickened out. Swiftly taking to his feet, he beat a very brave retreat. Bravest of the brave, Sir Robin!");
 		return true;
 	}
 	else {
@@ -156,8 +156,8 @@ function playerTwoRegenerateHealth(){
 
 function playerTwoAttemptToDisengage(){
 	let n = diceSideResults(50);
-	if (n == 3){document.getElementById("playerTwoDisengage").innerHTML = "Player two: You have successfully disengaged and ran from the fight. You lose, but you'll live to fight another day.";
-		alert("Player two: You have successfully disengaged and ran from the fight. You lose, but you'll live to fight another day.")
+	if (n <= 3){document.getElementById("playerTwoDisengage").innerHTML = "Player two: You have successfully disengaged and ran from the fight. You win, but your mother is a hamster and your father smells of elderberries.";
+		alert("Brave Sir Robin ran away. Bravely ran away away. When danger reared it's ugly head, he bravely turned his tail and fled. Yes, brave Sir Robin turned about and gallantly he chickened out. Swiftly taking to his feet, he beat a very brave retreat. Bravest of the brave, Sir Robin!")
 		return true;
 	}
 	else {
