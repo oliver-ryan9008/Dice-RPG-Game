@@ -2,48 +2,94 @@
 <html>
 	<head>
 		<title>-----Battle Royale-----</title>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="diceGame.js"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Eater" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Krona+One" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="diceGame.css">
 	</head>
 <body>
+
 	<center>
-		<h1>"-----Battle Royale-----"</h1>
+		<h1 class="col-4 firstpage headerfont">-----Battle Royale-----</h1>
 		<br><br><br><br>
 	</center>
 
+	<center>
+	
+		<h3 class="col-4 firstpage rulesfont">Game Rules:</h3>
+		<div class="container">
+  			<div class="row">
+	    		<div class="col-2">
+	     			
+	    		</div>
+   				<div class="col-8 firstpage">
+   					<ul class>
+							<li>Decide who plays first. (For the rest of the tutorial, we will be assuming player one goes first. If player two is going first, replace the names.)</li><br>
+							<li>Life totals will begin at 50 points. Damage can decrease life. There is also a small chance of regenerating some life every turn if the "Regenerate" bonus action is chosen.</li><br>
+							<li>On each player's turn, you may choose any two actions of what to do this turn. You may NOT choose the same option twice.</li><br>
+							<li>In addition to your two actions, you also have a bonus action of either "Dodge" or "Regenerate". You make pick ONE bonus action from these two options.</li><br>
+							<li>Tally totals of Attack, Defense, etc. and add/subtract from life totals.</li><br>
+							<li>If a player successfully dodges his/her opponents attack, that player will receive no damage that turn, regardless of attack/defend status.</li><br>
+							<li>If the "Weapon Modifier option is chosen, all weapon increases are applied before any multipliers.<br>For example: An "Attack" of 10 with a Weapon Modifier of 2 would be applied before critical hit damage is calculated.<br>(Critical hit damage applies by doubling your damage dealing if your opponent unsuccessfully tries to dodge.) </li><br>
+							<li>If any player disengages from the fight at any time, an alert will appear showing that the fight is over and the opponent will win by default.</li><br>
+							<li>Each button may only be clicked ONCE per turn. Violating this rule will result in immediate disqualification.</li><br>
+							<li>After each round, click the button labeled "Next Round" to reset the results and start the next round. Continue until one player has reached "0" life total OR any player has successfully disengaged from the fight.</li><br>
+						</ul>
+    			</div>
+	    		<div class="col-2">	      			
+	    		</div>  				
+			</div>			
+		</div>
+
+<br><br><br>
+	</center>
 
 	<center>
-	<script src="diceGame.js"></script>
-		<button onClick = "playerOneAttackTurn()">Player One, Attack</button>
-		<div id="playerOneAttack"></div><br>			
-		<button onClick = "playerOneDefendTurn()">Player One, Defend</button>
-		<div id="playerOneDefend"></div><br>		
-		<button onClick = "playerOneDodgeTurn()">Player One, Dodge</button>
-		<div id="playerOneDodge"></div>	<br>	
-		<button onClick = "playerOneRegenerateHealth()">Player One, Attempt to Regenerate Health</button>
-		<div id="playerOneRegenerate"></div><br>			
-		<button onClick = "playerOneAttemptToDisengage()">Player One, Disengage Attempt</button>
-		<div id="playerOneDisengage"></div>	<br>
-		<button onClick = "playerOneWeaponModifier()">Player One, Weapon Modifier</button>
-		<div id="playerOneWeapon"></div><br>
-		<br><br><br><br>		
-		<button onClick = "playerTwoAttackTurn()">Player Two, Attack</button>
-		<div id="playerTwoAttack"></div><br>
-		<button onClick = "playerTwoDefendTurn()">Player Two, Defend</button>
-		<div id="playerTwoDefend"></div><br>
-		<button onClick = "playerTwoDodgeTurn()">Player Two, Dodge</button>
-		<div id="playerTwoDodge"></div><br>
-		<button onClick = "playerTwoRegenerateHealth()">Player Two, Attempt to Regenerate Health</button>
-		<div id="playerTwoRegenerate"></div><br>
-		<button onClick = "playerTwoAttemptToDisengage()">Player Two, Disengage Attempt</button>
-		<div id="playerTwoDisengage"></div><br>
-		<button onClick = "playerTwoWeaponModifier()">Player Two, Weapon Modifier</button>
-		<div id="playerTwoWeapon"></div><br>
+		<input type="button" value="Next Round" class="buttonboxtext" onClick="window.location.reload()">
+<br><br><br><br><br>
+
 	</center>
+
+
+	<center>
+		<div> <p class= "bonustext">Primary Actions:</p></div>
+		<button class="buttonboxtext" onClick = "playerOneAttackTurn()">Player One, Attack</button>
+		<div class="buttonresulttext" id="playerOneAttack"></div><br>
+		<button class="buttonboxtext" onClick = "playerOneDefendTurn()">Player One, Defend</button>
+		<div class="buttonresulttext" id="playerOneDefend"></div><br>					
+		<button class="buttonboxtext" onClick = "playerOneAttemptToDisengage()">Player One, Disengage Attempt</button>
+		<div class="buttonresulttext" id="playerOneDisengage"></div><br>
+		<button class="buttonboxtext" onClick = "playerOneWeaponModifier()">Player One, Weapon Modifier</button>
+		<div class="buttonresulttext" id="playerOneWeapon"></div><br>
+		<div> <p class= "bonustext">Bonus Actions:</p></div>
+		<button class="buttonboxtext" onClick = "playerOneDodgeTurn()">Player One, Dodge</button>
+		<div class="buttonresulttext" id="playerOneDodge"></div><br>	
+		<button class="buttonboxtext" onClick = "playerOneRegenerateHealth()">Player One, Attempt to Regenerate Health</button>
+		<div class="buttonresulttext" id="playerOneRegenerate"></div><br>
+		<br><br><br><br>
+		<div> <p class= "bonustext">Primary Actions:</p></div>		
+		<button class="buttonboxtext" onClick = "playerTwoAttackTurn()">Player Two, Attack</button>
+		<div class="buttonresulttext" id="playerTwoAttack"></div><br>
+		<button class="buttonboxtext" onClick = "playerTwoDefendTurn()">Player Two, Defend</button>
+		<div class="buttonresulttext" id="playerTwoDefend"></div><br>
+		<button class="buttonboxtext" onClick = "playerTwoAttemptToDisengage()">Player Two, Disengage Attempt</button>
+		<div class="buttonresulttext" id="playerTwoDisengage"></div><br>
+		<button class="buttonboxtext" onClick = "playerTwoWeaponModifier()">Player Two, Weapon Modifier</button>
+		<div class="buttonresulttext" id="playerTwoWeapon"></div><br>
+		<div> <p class= "bonustext">Bonus Actions:</p></div>
+		<button class="buttonboxtext" onClick = "playerTwoDodgeTurn()">Player Two, Dodge</button>
+		<div class="buttonresulttext" id="playerTwoDodge"></div><br>
+		<button class="buttonboxtext" onClick = "playerTwoRegenerateHealth()">Player Two, Attempt to Regenerate Health</button>
+		<div class="buttonresulttext" id="playerTwoRegenerate"></div><br>
+	</center><br><br><br><br>
+
+
 </div>
 </div>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 </body>
 </html>
-
-
-

@@ -1,0 +1,48 @@
+body {
+	color: black;
+	background: url(swordfightingcartoon1.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.firstpage {
+	border: 2px solid #F5F5DC;
+	border-radius: 20px;
+	margin: 5px;
+	background: white;
+	font-family: 'Eater', cursive;
+	font-size: 18px;
+}
+
+.rulesfont {
+
+	font-family: 'Eater', cursive;
+	font-size: 25px;
+}
+
+.buttonresulttext {
+	font-weight: bold;
+	color: #C62D42;
+	font-family: 'Krona One', sans-serif;
+	font-size: 20px;
+}
+
+.buttonboxtext {
+	font-family: 'Krona One', sans-serif;
+	font-size: 15px;
+
+}
+
+.headerfont {
+	font-family: 'Eater', cursive;
+	font-size: 40px;
+}
+
+.bonustext {
+	font-weight: bold;
+	color: black;
+	font-family: 'Krona One', sans-serif;
+	font-size: 20px
+}
